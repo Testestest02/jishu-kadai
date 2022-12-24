@@ -27,6 +27,12 @@
                             <!-- 商品名（アウター）-->
                             <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">{{$item->name}}</div>
                                 <div class="card-body">
+                                    <!-- 商品非公開の場合のみ表示（インナー）-->
+                                    @if ($item->status == 'passive')
+                                    <div class="card-tool h2">
+                                        <span class="badge badge-pill badge-secondary">非公開商品</span>
+                                    </div>
+                                    @endif
                                     @foreach ($item->points as $point)
                                     @if ($loop->last)
                                     <!-- 商品特長数（アウター）-->
@@ -46,6 +52,10 @@
                                     </div>
                                     <!-- ボタングループ-->
                                     <div class="card-footer">
+                                    <!-- 商品詳細ボタン-->
+                                    <a href="{{ route('items.detail',$item->id) }}">
+                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary">
+                                    詳細</button></a>
                                 <!-- アカウント権限が管理者であれば商品編集ボタンを表示（アウター）-->
                                 @can('isAdmin')
                                     <!-- 商品編集ボタン-->
@@ -53,10 +63,6 @@
                                     <button type="submit" id="edit-user-{{ $item->id }}" class="btn btn-secondary">
                                     編集</button></a>
                                 @endcan
-                                    <!-- 商品詳細ボタン-->
-                                    <a href="{{ route('items.detail',$item->id) }}">
-                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-secondary">
-                                    詳細</button></a>
                                 </div>
                             </div>
                         </div>
@@ -79,6 +85,12 @@
                                 <!-- 商品名（インナー）-->
                                 <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">{{$item->name}}</div>
                                 <div class="card-body">
+                                    <!-- 商品非公開の場合のみ表示（インナー）-->
+                                    @if ($item->status == 'passive')
+                                    <div class="card-tool h2">
+                                        <span class="badge badge-pill badge-secondary">非公開商品</span>
+                                    </div>
+                                    @endif
                                     @foreach ($item->points as $point)
                                     @if ($loop->last)
                                     <!-- 商品特長数（インナー）-->
@@ -98,6 +110,10 @@
                                 </div>
                                 <!-- ボタングループ-->
                                 <div class="card-footer">
+                                    <!-- 商品詳細ボタン-->
+                                    <a href="{{ route('items.detail',$item->id) }}">
+                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary">
+                                    詳細</button></a>
                                 <!-- アカウント権限が管理者であれば商品編集ボタンを表示（インナー）-->
                                 @can('isAdmin')
                                     <!-- 商品編集ボタン-->
@@ -105,10 +121,6 @@
                                     <button type="submit" id="edit-user-{{ $item->id }}" class="btn btn-secondary">
                                     編集</button></a>
                                 @endcan
-                                    <!-- 商品詳細ボタン-->
-                                    <a href="{{ route('items.detail',$item->id) }}">
-                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-secondary">
-                                    詳細</button></a>
                                 </div>
                             </div>
                         </div>

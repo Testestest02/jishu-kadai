@@ -43,6 +43,18 @@
                                 <label for="type2" class="form-check-label">インナー</label>
                             </div>
                         </div>
+                        <!-- 商品公開状況 -->
+                        <div class="form-group mb-4">
+                            <div class="form-group">
+                            <label class="h5" for="status">商品公開状況</label><span class="h5 bg-danger text-white ml-1">必須</span>
+                            </div>
+                            <div class="form-group form-check-inline ml-3">
+                                <input type="radio" class="form-check-input" value="active" id="active" name="status" {{ old('status') == 'active' ? 'checked' : ''}}>
+                                <label for="active" class="form-check-label">公開</label>
+                                <input type="radio" class="form-check-input ml-3" value="passive" id="passive" name="status" {{ old('status') == 'passive' ? 'checked' : ''}}>
+                                <label for="passive" class="form-check-label">非公開</label>
+                            </div>
+                        </div>
                         <!-- 商品対応性別 -->
                         <div class="form-group mb-4">
                             <div class="form-group">

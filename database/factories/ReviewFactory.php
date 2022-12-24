@@ -16,11 +16,11 @@ class ReviewFactory extends Factory
     {
         return [
             //
-            'user_id' =>  rand(1, 6),
-            'item_id' =>  rand(1, 6),
+            'user_id' =>  rand(1, 12),
+            'item_id' =>  rand(1, 12),
             'name' => $this->faker->name(),
-            'score' => '♥ ♥ ♥ ♡ ♡',
-            'comment' => $this->faker->realText(20),
+            'score' => $this->faker->randomElement(['♡ ♡ ♡ ♡ ♡','♥ ♡ ♡ ♡ ♡','♥ ♥ ♡ ♡ ♡', '♥ ♥ ♥ ♡ ♡','♥ ♥ ♥ ♥ ♡','♥ ♥ ♥ ♥ ♥']),
+            'comment' => $this->faker->realText(200),
         ];
     }
 }

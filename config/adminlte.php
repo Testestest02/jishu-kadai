@@ -231,16 +231,20 @@ return [
             'icon' => 'fas fa-faucet',
         ],
         [
-            'text' => 'アカウント一覧',
-            'url' => 'user',
-            'icon' => 'fas fa-id-card',
-            'can' => 'isAdmin',
-        ],
-        [
             'text' => '商品特徴一覧',
             'url' => 'point',
             'icon' => 'fas fa-check',
-            'can' => 'isAdmin',
+        ],
+        [
+            'text' => 'アカウント一覧',
+            'url' => 'user',
+            'icon' => 'fas fa-id-card',
+            'can' => 'isTopAdmin',
+        ],
+        [
+            'text' => 'Myアカウント',
+            'url' => 'myAccount',
+            'icon' => 'fas fa-id-card',
         ],
 
         // AdminLTEデフォルト

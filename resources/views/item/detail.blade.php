@@ -80,7 +80,7 @@
                         <div class="form-group p-2">
                         <label class="h5">この商品についてのレビュー</label>
                         @foreach ($item->reviews as $review)
-                            <!-- 商品にレビューがついていれば、そのレビューを表示 -->
+                            <!-- 商品にレビューがあれば、そのレビューを全て表示 -->
                             @if ($review->item_id == $item->id)
                             <div class="card ml-3 mt-2" style="max-width: 32rem;">
                                 <div class="card-body">
@@ -104,13 +104,13 @@
                                     <!-- ログインしているのがレビューを投稿したユーザー、もしくは管理者の場合レビュー編集ボタンを表示 -->
                                     @if ($review->user_id == Auth::id() || $user->role == 2)
                                     <!-- レビュー削除フォーム -->
-                                    <form method="POST" action="{{ url('items/destroyReview', ['id'=>$review->id]) }}" id="review">
+                                    <form method="POST" action="{{ url('items/destroyReview', ['id'=>$review->id]) }}">
                                     {{ csrf_field()}}
                                     {{ method_field('DELETE') }}
                                         <!-- レビュー編集ボタン -->
-                                        <a href="{{ url('items/reviewEdit', ['id'=>$review->id]) }}" class="btn btn-primary">編集する</a>
+                                        <a href="{{ url('items/reviewEdit', ['id'=>$review->id]) }}" class="btn btn-secondary">編集する</a>
                                         <!-- レビュー削除ボタン -->
-                                        <input type="submit" class="btn btn-primary" name="reviewdestroy" id="{{ $review->id }}" value="削除する" form="review" onclick='return confirm("本当にレビューを削除してもよろしいですか");'></input>
+                                        <button type="submit" class="btn btn-danger" onclick='return confirm("{{$review->name}}様のレビューを削除してもよろしいですか");'>削除</button>
                                     </form>
                                     @endif
                                 </div>

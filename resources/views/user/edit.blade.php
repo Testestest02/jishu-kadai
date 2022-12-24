@@ -35,24 +35,26 @@
                             <label for="email">メールアドレス</label>
                             <input type="text" class="form-control" value="{{ old('email', $user->email) }}" id="email" name="email">
                         </div>
-                        <!-- 権限 -->                        
+                        <!-- 権限 -->
+                        @can('isTopAdmin')
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="role">権限</label>
                             </div>
                             <div class="form-group form-check-inline">
                                 <input type="radio" class="form-check-input" value="0" id="role0" name="role" {{ old('role', $user->role) == 0 ? 'checked' : ''}}>
-                                <label for="role0" class="form-check-label">一般</label>
+                                <label for="role0" class="form-check-label">利用者</label>
                             </div>
                             <div class="form-group form-check-inline">
                                 <input type="radio" class="form-check-input" value="1" id="role1" name="role" {{ old('role', $user->role) == 1 ? 'checked' : ''}}>
-                                <label for="role1" class="form-check-label">管理者</label>
+                                <label for="role1" class="form-check-label">商品管理者</label>
                             </div>
                             <div class="form-group form-check-inline">
                                 <input type="radio" class="form-check-input" value="2" id="role2" name="role" {{ old('role', $user->role) == 2 ? 'checked' : ''}}>
-                                <label for="role2" class="form-check-label">上級管理者</label>
+                                <label for="role2" class="form-check-label">アカウント管理</label>
                             </div>
                         </div>
+                        @endcan
                     </div>
                 </form>
                     <!-- ボタングループ -->
@@ -62,7 +64,7 @@
                             登録
                         </button>
                         <!-- アカウント削除ボタン -->
-                        <button type="submit" class="btn btn-primary" id="delete-user-{{ $user->id }}" form="delete" onclick='return confirm("アカウント情報を削除してもよろしいですか");'>
+                        <button type="submit" class="btn btn-danger" id="delete-user-{{ $user->id }}" form="delete" onclick='return confirm("アカウント情報を削除してもよろしいですか");'>
                         アカウント削除
                         {{ method_field('DELETE') }}
                         </button>

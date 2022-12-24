@@ -17,6 +17,7 @@ class Item extends Model
     protected $fillable = [
         'user_id',
         'name',
+        'status',
         'type',
         'sex',
         'max',

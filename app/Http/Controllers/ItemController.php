@@ -10,6 +10,7 @@ use App\Models\Item;
 use App\Models\Point;
 use App\Models\Size;
 use App\Models\Review;
+use \Gate;
 
 
 class ItemController extends Controller
@@ -29,11 +30,12 @@ class ItemController extends Controller
      */
     public function index()
     {
+        if ( Gate::allows('isGeneral')){
         // 商品一覧取得
-        $items = Item
-            ::where('items.status', 'active')
-            ->select()
-            ->get();
+        $items = Item::where('items.status', 'active')->select()->get();
+        }else{
+            $items = Item::all();
+        };
 
         return view('item.index', compact('items'));
     }
@@ -43,6 +45,7 @@ class ItemController extends Controller
      */
     public function add(Request $request)
     {
+        Gate::authorize('isAdmin');
         $points = Point::all();
         $sizes = Size::all();
 
@@ -54,9 +57,11 @@ class ItemController extends Controller
      */
     public function addIn(ItemRequest $request)
     {
+        Gate::authorize('isAdmin');
         $item = Item::create([
             'user_id' => Auth::user()->id,
             'name' => $request->name,
+            'status' => $request->status,
             'type' => $request->type,
             'sex' => $request->sex,
             'max' => $request->max,
@@ -91,6 +96,7 @@ class ItemController extends Controller
      */
     public function edit(Request $request)
     {
+        Gate::authorize('isAdmin');
         $item = Item::find($request->id);
         $points = Point::all();
         $sizes = Size::all();
@@ -106,9 +112,11 @@ class ItemController extends Controller
      */
     public function update(ItemRequest $request)
     {
+        Gate::authorize('isAdmin');
         $item = Item::find($request->id);
         $item->update([
             'name' => $request->name,
+            'status' => $request->status,
             'type' => $request->type,
             'sex' => $request->sex,
             'max' => $request->max,
@@ -127,6 +135,7 @@ class ItemController extends Controller
     */
     public function destroy(Request $request)
     {
+        Gate::authorize('isAdmin');
         $item = Item::find($request->id);
         $item->delete();
 
@@ -162,7 +171,6 @@ class ItemController extends Controller
             'comment' => $request->comment,
         ]);
         return redirect()->route('items.detail', ['id' => $review->item_id]);
-        // return redirect('/items');
     }
 
     /**
@@ -171,9 +179,11 @@ class ItemController extends Controller
     public function reviewEdit(Request $request)
     {
         $review = Review::find($request->id);
-        $item = Item::find($review->item_id);
-
-        return view('item.reviewedit', compact('review', 'item'));
+        if ( Gate::allows('isTopAdmin') || $review->user_id == Auth::id()){
+            $item = Item::find($review->item_id);
+            return view('item.reviewedit', compact('review', 'item'));
+        }
+        return redirect('/items');
     }
 
     /**
@@ -185,13 +195,14 @@ class ItemController extends Controller
     public function reviewUpdate(ReviewRequest $request)
     {
         $review = Review::find($request->id);
+        if ( Gate::allows('isTopAdmin') || $review->user_id == Auth::id()){
         $review->update([
             'name' => $request->name,
             'score' => $request->score,
             'comment' => $request->comment,
             'reply' => $request->reply
         ]);
-
+    }
         return redirect()->route('items.detail', ['id' => $review->item_id]);
     }
 
@@ -204,9 +215,11 @@ class ItemController extends Controller
     public function destroyReview(Request $request)
     {
         $review = Review::find($request->id);
-        $review->delete();
+        if ( Gate::allows('isTopAdmin') || $review->user_id == Auth::id()){
 
-        return redirect('/items');
+        $review->delete();
+        }
+        return redirect()->route('items.detail', ['id' => $review->item_id]);
     }
 
 }

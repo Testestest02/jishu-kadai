@@ -16,12 +16,14 @@
     <div class="p-4">
         <div class="row">
             @foreach ($points as $point)
-            <div class="col-md-10">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header bg-warning d-flex">
                         <h2 class="ml-3" style="letter-spacing: 0.42rem;">{{ $point->name }}</h2>
                         <!-- 商品特長編集画面への遷移ボタン -->
+                        @can('isAdmin')
                         <a href="{{ route('point.edit', $point->id) }}" class="btn btn-default ml-auto">編集</a>
+                        @endcan
                     </div>
                     <div class="card-body mb-3 mx-4">
                         <!-- 商品特長内容表示 -->
