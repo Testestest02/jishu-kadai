@@ -90,14 +90,14 @@
                                         <h6 class="ml-auto">{{date('Y/m/d', strtotime($review->created_at))}}</h6>
                                     </div>
                                     <!-- 商品評価 -->
-                                    <h4 class="card-text text-danger h3">{!! nl2br(htmlspecialchars($review->score)) !!}</h4>
+                                    <h4 class="card-text text-danger h3">{{$review->score}}</h4>
                                     <!-- コメント -->
                                     <p class="card-text">{!! nl2br(htmlspecialchars($review->comment)) !!}</p>
                                     <!-- コメントに返信があれば、返信を表示 -->
                                     @isset ($review->reply)
                                     <!-- 返信 更新日 -->
                                     <div class="card-text bg-light p-3 mb-2">
-                                        <p>{{ $review->reply }}</p>
+                                        <p>{!! nl2br(htmlspecialchars($review->reply)) !!}</p>
                                         <p class="text-right">{{ date('Y/m/d', strtotime($review->updated_at)) }}</p>
                                     </div>
                                     @endisset
