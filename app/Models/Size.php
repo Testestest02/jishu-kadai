@@ -5,24 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Size extends Model
 {
     use HasFactory;
 
-    /**
+        /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
         'name',
-        'type',
-        'sex',
-        'max',
+        'sheet',
+        'in',
+        'out',
     ];
 
-    /**
+        /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -38,19 +37,10 @@ class Item extends Model
     protected $casts = [
     ];
 
-    public function points()
+    public function items()
     {
-        return $this->belongsToMany('App\Models\Point');
+        return $this->belongsToMany('App\Models\Item');
     }
 
-    public function sizes()
-    {
-        return $this->belongsToMany('App\Models\Size');
-    }
-
-    public function reviews()
-    {
-        return $this->hasMany('App\Models\Review');
-    }
 
 }
