@@ -15,7 +15,7 @@ class CreatePointsTable extends Migration
     {
         Schema::create('points', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50)->unique();
+            $table->string('name', 50)->charset("utf8")->unique();
             $table->string('detailA', 100);
             $table->string('detailB', 100)->nullable();
             $table->string('detailC', 100)->nullable();
