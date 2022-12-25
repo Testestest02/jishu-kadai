@@ -25,7 +25,7 @@ class Review extends Model
 
 public function items()
 {
-    return $this->belongsTo('App\Models\Item')->withDefault();
+    return $this->belongsTo('App\Models\Item');
 }
 
 public function users()
