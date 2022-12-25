@@ -18,51 +18,51 @@ class ItemSizeSeeder extends Seeder
         DB::table('item_size')->insert([
             [
                 'item_id' => 1,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 2,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 3,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 4,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 5,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 6,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 7,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 8,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 9,
-                'size_id' => rand(1, 3)
-            ],
-            [
-                'item_id' => 10,
-                'size_id' => rand(1, 3)
+                'size_id' => 1
             ],
             [
                 'item_id' => 11,
-                'size_id' => rand(1, 3)
+                'size_id' => 11
             ],
             [
-                'item_id' => 12,
-                'size_id' => rand(1, 3)
+                'item_id' => 21,
+                'size_id' => 21
+            ],
+            [
+                'item_id' => 31,
+                'size_id' => 1
+            ],
+            [
+                'item_id' => 41,
+                'size_id' => 11
+            ],
+            [
+                'item_id' => 51,
+                'size_id' => 21
+            ],
+            [
+                'item_id' => 61,
+                'size_id' => 1
+            ],
+            [
+                'item_id' => 71,
+                'size_id' => 11
+            ],
+            [
+                'item_id' => 81,
+                'size_id' => 21
+            ],
+            [
+                'item_id' => 91,
+                'size_id' => 1
+            ],
+            [
+                'item_id' => 101,
+                'size_id' => 11
+            ],
+            [
+                'item_id' => 111,
+                'size_id' => 21
             ]
             ]);
     }

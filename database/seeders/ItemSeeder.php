@@ -32,7 +32,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '2',
+            'user_id' => '11',
             'name' => '昼1枚安心パンツ 長時間快適プラス',
             'status' => 'active',
             'type' => 'アウター',
@@ -40,7 +40,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '2',
+            'user_id' => '11',
             'name' => '夜1枚安心パンツ パッドなしでずっと快適',
             'status' => 'active',
             'type' => 'アウター',
@@ -48,7 +48,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ5回分',
         ]);
         Item::create([
-            'user_id' => '3',
+            'user_id' => '21',
             'name' => 'らくらくあて楽テープ',
             'status' => 'active',
             'type' => 'アウター',
@@ -56,7 +56,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '3',
+            'user_id' => '21',
             'name' => 'スーパーらくらくあて楽テープ',
             'status' => 'active',
             'type' => 'アウター',
@@ -64,7 +64,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '4',
+            'user_id' => '31',
             'name' => ' 紙パンツ用さらさらパッドプラス',
             'status' => 'active',
             'type' => 'インナー',
@@ -72,7 +72,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '4',
+            'user_id' => '31',
             'name' => '紙パンツ用パッド 下着気分',
             'status' => 'active',
             'type' => 'インナー',
@@ -80,7 +80,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ1回分',
         ]);
         Item::create([
-            'user_id' => '5',
+            'user_id' => '41',
             'name' => '昼1枚安心パッド',
             'status' => 'active',
             'type' => 'インナー',
@@ -88,7 +88,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ3回分',
         ]);
         Item::create([
-            'user_id' => '5',
+            'user_id' => '41',
             'name' => '夜1枚安心パッド',
             'status' => 'active',
             'type' => 'インナー',
@@ -96,7 +96,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ5回分',
         ]);
         Item::create([
-            'user_id' => '6',
+            'user_id' => '51',
             'name' => '尿吸収パッド',
             'status' => 'active',
             'type' => 'インナー',
@@ -104,7 +104,7 @@ class ItemSeeder extends Seeder
             'max' => 'おしっこ2回分',
         ]);
         Item::create([
-            'user_id' => '6',
+            'user_id' => '51',
             'name' => 'ハイパー尿吸収パッド',
             'status' => 'active',
             'type' => 'インナー',

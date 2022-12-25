@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ItemSeeder::class);
         $this->call(PointSeeder::class);
         $this->call(SizeSeeder::class);
-        $this->call(ItemPointSeeder::class);
-        $this->call(ItemSizeSeeder::class);
-        \App\Models\Review::factory(12)->create();
+        // $this->call(ItemPointSeeder::class);
+        // $this->call(ItemSizeSeeder::class);
+        // \App\Models\Review::factory(12)->create();
 
     }
 }

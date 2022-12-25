@@ -16,8 +16,8 @@ class ReviewFactory extends Factory
     {
         return [
             //
-            'user_id' =>  rand(1, 12),
-            'item_id' =>  rand(1, 12),
+            'user_id' =>  $this->faker->randomElement(['1','11','21', '31','41','51']),
+            'item_id' =>  $this->faker->randomElement(['1','11','21','31','41','51','61','71','81','91','101','111']),
             'name' => $this->faker->name(),
             'score' => $this->faker->randomElement(['♡ ♡ ♡ ♡ ♡','♥ ♡ ♡ ♡ ♡','♥ ♥ ♡ ♡ ♡', '♥ ♥ ♥ ♡ ♡','♥ ♥ ♥ ♥ ♡','♥ ♥ ♥ ♥ ♥']),
             'comment' => $this->faker->realText(200),

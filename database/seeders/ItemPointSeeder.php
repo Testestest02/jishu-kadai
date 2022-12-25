@@ -21,48 +21,48 @@ class ItemPointSeeder extends Seeder
                 'point_id' => 1
             ],
             [
-                'item_id' => 2,
-                'point_id' => 2
+                'item_id' => 11,
+                'point_id' => 11
             ],
             [
-                'item_id' => 3,
-                'point_id' => 3
+                'item_id' => 21,
+                'point_id' => 21
             ],
             [
-                'item_id' => 4,
-                'point_id' => 4
+                'item_id' => 31,
+                'point_id' => 31
             ],
             [
-                'item_id' => 5,
-                'point_id' => 5
+                'item_id' => 41,
+                'point_id' => 41
             ],
             [
-                'item_id' => 6,
-                'point_id' => 6
+                'item_id' => 51,
+                'point_id' => 51
             ],
             [
-                'item_id' => 7,
+                'item_id' => 61,
                 'point_id' => 1
             ],
             [
-                'item_id' => 8,
-                'point_id' => 2
+                'item_id' => 71,
+                'point_id' => 11
             ],
             [
-                'item_id' => 9,
-                'point_id' => 3
+                'item_id' => 81,
+                'point_id' => 21
             ],
             [
-                'item_id' => 10,
-                'point_id' => 4
+                'item_id' => 91,
+                'point_id' => 31
             ],
             [
-                'item_id' => 11,
-                'point_id' => 5
+                'item_id' => 101,
+                'point_id' => 41
             ],
             [
-                'item_id' => 12,
-                'point_id' => 6
+                'item_id' => 111,
+                'point_id' => 51
             ]
             ]);
     }
