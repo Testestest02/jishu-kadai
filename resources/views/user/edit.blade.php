@@ -63,9 +63,11 @@
                         <button type="submit" class="btn btn-primary mr-3" id="edit-user-{{ $user->id }}" form="update">
                             登録
                         </button>
+                        @can('isTopAdmin')
                         <!-- 戻るボタン -->
                         <button type="submit" class="btn btn-success mr-3" onclick="location.href='/user/'">
                         戻る</button>
+                        @endcan
                         <!-- アカウント削除ボタン -->
                         <button type="submit" class="btn btn-danger" id="delete-user-{{ $user->id }}" form="delete" onclick='return confirm("「{{ $user->name }}様」のアカウントを削除してもよろしいですか");'>
                         アカウント削除
