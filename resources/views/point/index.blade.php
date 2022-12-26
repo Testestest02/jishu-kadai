@@ -37,7 +37,7 @@
                             <p class="card-text ml-2 my-2 h5">{!! nl2br(htmlspecialchars($point->detailB)) !!}</p></li>
                             @endisset
                             @isset ($point->detailC)
-                            <li class="list-group-item list-group-item-warning"><p class="h5">ポイント３</p>
+                            <li class="list-group-item list-group-item-warning"><p class="h5">@if (isset($point->detailB)) ポイント３ @else ポイント２ @endif</p>
                             <p class="card-text ml-2 my-2 h5">{!! nl2br(htmlspecialchars($point->detailC)) !!}</p></li>
                             @endisset
                         </ul>
