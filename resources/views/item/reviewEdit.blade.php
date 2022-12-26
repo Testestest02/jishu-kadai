@@ -65,10 +65,10 @@
                 <!-- ボタングループ -->
                 <div class="card-footer">
                     <!-- レビュー投稿ボタン -->
-                    <button type="submit" class="btn btn-primary" id="update-review-{{ $review->id }}" form="reviewUpdate">
+                    <button type="submit" class="btn btn-primary mr-3" id="update-review-{{ $review->id }}" form="reviewUpdate">
                     投稿する</button>
                     <!-- 戻るボタン -->
-                    <button type="submit" class="btn btn-primary" onclick="location.href='/items/detail/{{ $item->id }}'">
+                    <button type="submit" class="btn btn-success" onclick="location.href='/items/detail/{{ $item->id }}'">
                     戻る</button>
                 </div>
             </div>

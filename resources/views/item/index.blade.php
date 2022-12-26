@@ -7,7 +7,8 @@
     <div class="d-flex mt-2">
         <h2>商品ラインナップ</h2>
         @can('isAdmin')
-        <a href="{{ url('items/add') }}" class="btn btn-secondary ml-auto">新規商品登録</a>
+        <a href="{{ url('items/add') }}" class="ml-auto"><button type="submit" class="btn btn-secondary">
+        商品登録</button></a>
         @endcan
     </div>
     @stop
@@ -25,7 +26,8 @@
                         <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 p-4">
                             <div class="card text-center">
                             <!-- 商品名（アウター）-->
-                            <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">{{$item->name}}</div>
+                            <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">
+                            {!! nl2br(htmlspecialchars($item->name)) !!}</div>
                                 <div class="card-body">
                                     <!-- 商品非公開の場合のみ表示（インナー）-->
                                     @if ($item->status == 'passive')
@@ -54,7 +56,7 @@
                                     <div class="card-footer">
                                     <!-- 商品詳細ボタン-->
                                     <a href="{{ route('items.detail',$item->id) }}">
-                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary">
+                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary mr-3">
                                     詳細</button></a>
                                 <!-- アカウント権限が管理者であれば商品編集ボタンを表示（アウター）-->
                                 @can('isAdmin')
@@ -83,7 +85,8 @@
                         <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 p-4">
                             <div class="card text-center">
                                 <!-- 商品名（インナー）-->
-                                <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">{{$item->name}}</div>
+                                <div class="card-header h4 bg-primary" style="letter-spacing: 0.42rem;">
+                                {!! nl2br(htmlspecialchars($item->name)) !!}</div>
                                 <div class="card-body">
                                     <!-- 商品非公開の場合のみ表示（インナー）-->
                                     @if ($item->status == 'passive')
@@ -112,7 +115,7 @@
                                 <div class="card-footer">
                                     <!-- 商品詳細ボタン-->
                                     <a href="{{ route('items.detail',$item->id) }}">
-                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary">
+                                    <button type="submit" id="detail-user-{{ $item->id }}" class="btn btn-primary mr-3">
                                     詳細</button></a>
                                 <!-- アカウント権限が管理者であれば商品編集ボタンを表示（インナー）-->
                                 @can('isAdmin')

@@ -108,9 +108,9 @@
                                     {{ csrf_field()}}
                                     {{ method_field('DELETE') }}
                                         <!-- レビュー編集ボタン -->
-                                        <a href="{{ url('items/reviewEdit', ['id'=>$review->id]) }}" class="btn btn-secondary">編集する</a>
+                                        <a href="{{ url('items/reviewEdit', ['id'=>$review->id]) }}" class="btn btn-secondary mr-3">編集する</a>
                                         <!-- レビュー削除ボタン -->
-                                        <button type="submit" class="btn btn-danger" onclick='return confirm("{{$review->name}}様のレビューを削除してもよろしいですか");'>削除</button>
+                                        <button type="submit" class="btn btn-danger" onclick='return confirm("「{{$review->name}}様」のレビューを削除してもよろしいですか");'>削除</button>
                                     </form>
                                     @endif
                                 </div>
@@ -127,10 +127,10 @@
                     <div class="card-footer">
                         <!-- レビュー投稿ボタン -->
                         <a href="{{ url('items/review', ['id'=>$item->id]) }}">
-                        <button type="submit" class="btn btn-primary" id="edit-item-{{ $item->id }}">
+                        <button type="submit" class="btn btn-primary mr-3" id="edit-item-{{ $item->id }}">
                         レビューする</button></a>
                         <!-- 戻るボタン -->
-                        <button type="submit" class="btn btn-primary" onclick="location.href='/items/'">
+                        <button type="submit" class="btn btn-success" onclick="location.href='/items/'">
                         戻る</button>
                     </div>
                 </div>

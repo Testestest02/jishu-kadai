@@ -32,7 +32,7 @@
                         <!-- ニックネーム -->
                         <div class="form-group">
                             <label for="name">ニックネーム <span class="small bg-danger text-white">必須</span></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="こちらにコメントニックネームを入力して下さい。" value="{{ old('name') }}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="こちらにニックネームを入力して下さい。" value="{{ old('name') }}">
                         </div>
                         <!-- 商品評価 -->
                         <div class="form-group">
@@ -57,7 +57,7 @@
                     <!-- ボタングループ -->
                     <div class="card-footer">
                         <!-- レビュー投稿ボタン -->
-                        <button type="submit" class="btn btn-primary" id="edit-item-{{ $item->id }}" form="post">
+                        <button type="submit" class="btn btn-primary mr-3" id="edit-item-{{ $item->id }}" form="post">
                         投稿する</button>
                         <!-- 戻るボタン -->
                         <button type="submit" class="btn btn-primary" onclick="location.href='/items/'">

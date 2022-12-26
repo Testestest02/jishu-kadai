@@ -39,7 +39,7 @@
                         @can('isTopAdmin')
                         <div class="form-group">
                             <div class="form-group">
-                                <label for="role">権限</label>
+                                <label for="role">アカウント権限</label>
                             </div>
                             <div class="form-group form-check-inline">
                                 <input type="radio" class="form-check-input" value="0" id="role0" name="role" {{ old('role', $user->role) == 0 ? 'checked' : ''}}>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group form-check-inline">
                                 <input type="radio" class="form-check-input" value="2" id="role2" name="role" {{ old('role', $user->role) == 2 ? 'checked' : ''}}>
-                                <label for="role2" class="form-check-label">アカウント管理</label>
+                                <label for="role2" class="form-check-label">上級管理者</label>
                             </div>
                         </div>
                         @endcan
@@ -60,11 +60,14 @@
                     <!-- ボタングループ -->
                     <div class="card-footer">
                         <!-- アカウント編集登録ボタン -->
-                        <button type="submit" class="btn btn-primary" id="edit-user-{{ $user->id }}" form="update">
+                        <button type="submit" class="btn btn-primary mr-3" id="edit-user-{{ $user->id }}" form="update">
                             登録
                         </button>
+                        <!-- 戻るボタン -->
+                        <button type="submit" class="btn btn-success mr-3" onclick="location.href='/user/'">
+                        戻る</button>
                         <!-- アカウント削除ボタン -->
-                        <button type="submit" class="btn btn-danger" id="delete-user-{{ $user->id }}" form="delete" onclick='return confirm("アカウント情報を削除してもよろしいですか");'>
+                        <button type="submit" class="btn btn-danger" id="delete-user-{{ $user->id }}" form="delete" onclick='return confirm("「{{ $user->name }}様」のアカウントを削除してもよろしいですか");'>
                         アカウント削除
                         {{ method_field('DELETE') }}
                         </button>

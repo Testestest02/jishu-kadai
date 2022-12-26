@@ -20,7 +20,7 @@
                                     <th>ID</th>
                                     <th>名前</th>
                                     <th>メールアドレス</th>
-                                    <th>権限</th>
+                                    <th>アカウント権限</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -36,8 +36,8 @@
                                         <td>{{ $user->email }}</td>
                                         <!-- 権限 -->
                                         <td>@if ($user->role === 2 )上級管理者
-                                            @elseif ($user->role === 1 )管理
-                                            @else一般
+                                            @elseif ($user->role === 1 )商品管理者
+                                            @else利用者
                                             @endif
                                         </td>
                                         <!-- 編集ボタン -->

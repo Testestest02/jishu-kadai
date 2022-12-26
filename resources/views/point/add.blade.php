@@ -23,29 +23,32 @@
 
             <div class="card card-primary">
                 <!-- 特長追加フォーム -->
-                <form method="POST">
-                    @csrf
-                    <div class="card-body">
+                <form method="POST" id="addIn">
+                @csrf
+                <div class="card-body">
+                    <div class="form-group">
                         <div class="form-group">
-                            <div class="form-group">
-                            <!-- 特長名 -->
-                            <label for="name">特長名</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
-                            </div>
-                            <div class="form-group">
-                            <!-- 特長詳細 -->
-                            <label for="point">特長詳細</label>
-                                <textarea class="form-control" id="detail" name="detailA" placeholder="ポイント１" wrap="hard">{{ old('detailA') }}</textarea>
-                                <textarea class="form-control" id="detail" name="detailB" placeholder="ポイント２" wrap="hard">{{ old('detailB') }}</textarea>
-                                <textarea class="form-control" id="detail" name="detailC" placeholder="ポイント３" wrap="hard">{{ old('detailC') }}</textarea>
-                            </div>
+                        <!-- 特長名 -->
+                        <label for="name">特長名</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group">
+                        <!-- 特長詳細 -->
+                        <label for="point">特長詳細</label>
+                            <textarea class="form-control" id="detail" name="detailA" placeholder="ポイント１" wrap="hard">{{ old('detailA') }}</textarea>
+                            <textarea class="form-control" id="detail" name="detailB" placeholder="ポイント２" wrap="hard">{{ old('detailB') }}</textarea>
+                            <textarea class="form-control" id="detail" name="detailC" placeholder="ポイント３" wrap="hard">{{ old('detailC') }}</textarea>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <!-- 特長追加ボタン -->
-                        <button type="submit" class="btn btn-primary">登録</button>
-                    </div>
+                </div>
                 </form>
+                <div class="card-footer">
+                    <!-- 特長追加ボタン -->
+                    <button type="submit" class="btn btn-primary mr-3" form="addIn">登録</button>
+                    <!-- 戻るボタン -->
+                    <button type="submit" class="btn btn-success" onclick="location.href='/point/'">
+                    戻る</button>
+                </div>
             </div>
         </div>
     </div>

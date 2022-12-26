@@ -7,7 +7,8 @@
     <div class="d-flex mt-2">
         <h2>商品特長一覧</h2>
         @can('isAdmin')
-        <a href="{{ route('point.add') }}" class="btn btn-secondary ml-auto">新規特長登録</a>
+        <a href="{{ route('point.add') }}" class="ml-auto"><button type="submit" class="btn btn-secondary ">
+        特長登録</button></a>
         @endcan
     </div>
 @stop
@@ -22,7 +23,8 @@
                         <h2 class="ml-3" style="letter-spacing: 0.42rem;">{{ $point->name }}</h2>
                         <!-- 商品特長編集画面への遷移ボタン -->
                         @can('isAdmin')
-                        <a href="{{ route('point.edit', $point->id) }}" class="btn btn-default ml-auto">編集</a>
+                        <a href="{{ route('point.edit', $point->id) }}" class="ml-auto"><button type="submit" id="edit-{{ $point->id }}" class="btn btn-secondary ">
+                        編集</button></a>
                         @endcan
                     </div>
                     <div class="card-body mb-3 mx-4">
@@ -42,9 +44,9 @@
                         <!-- 商品特長を持つ商品一覧 -->
                         <label class="h5 mt-4">該当商品</label>
                         <div class="row">
-                            <div class="card-tool text-center p-2 h3">
+                            <div class="card-tool text-center p-2 h4">
                             @foreach ($point->items as $item)
-                            <span class="badge badge-pill bg-primary" style="letter-spacing: 0.42rem;">{{ $item->name }}</span>
+                            <a href="{{ route('items.detail',$item->id) }}" class="badge badge-pill bg-primary" style="letter-spacing: 0.42rem;">{{ $item->name }}</a>
                             @endforeach
                             </div>
                         </div>
