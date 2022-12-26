@@ -181,7 +181,7 @@ class ItemController extends Controller
         $review = Review::find($request->id);
         if ( Gate::allows('isTopAdmin') || $review->user_id == Auth::id()){
             $item = Item::find($review->item_id);
-            return view('item.reviewedit', compact('review', 'item'));
+            return view('item.reviwEdit', compact('review', 'item'));
         }
         return redirect('/items');
     }
